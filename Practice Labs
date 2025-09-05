@@ -1,5 +1,5 @@
 //Lab 1
-
+'''
 #include <iostream>
 #include <limits>
 using namespace std;
@@ -16,5 +16,6 @@ int main() {
     cout << "a/(b*c) = " << a/(b * c) << endl;
 
     return 0;
-}
+} '''
 
+//Lab 2
