@@ -1,4 +1,4 @@
-# Lab  Part A1
+# Part A1
 ``` c++
 #include <iostream>
 #include <limits>
@@ -19,7 +19,7 @@ int main() {
 }
 
 ```
-# Lab Part A2
+# Part A2
 ``` c++
 #include <iostream>
 #include <limits>
@@ -39,7 +39,7 @@ int main() {
     return 0;
 }
 ```
-# Lab Part B1
+# Part B1
 ```c++
 #include <iostream>
 #include <limits>
@@ -62,5 +62,58 @@ int main() {
     return 0;
 }
 ```
-# Lab Part B2
+# Part B2
+```c++
+#include <iostream>
+#include <limits>
+#include <iomanip>
+using namespace std;
 
+int main() {
+    
+    int Wins = 10;
+    int games =20; 
+
+    if (games == 0) {
+        cout << "No games played." << endl;
+    } else {
+        cout << fixed << setprecision(1);
+        double winRate = static_cast<double>(Wins) / games * 100;
+        cout << "Win Rate: " << winRate << "%" << endl;
+    }
+
+    return 0;
+}
+```
+# Part C
+``` c++
+#include <iostream>
+#include <limits>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    
+    double hours = 45;
+    double rate = 20.0;
+
+    double regHours = min(hours, 40.0); 
+    double otHours = max(hours - 40.0, 0.0);
+    double gross = regHours*rate + otHours*rate*1.5;
+    double net = gross - (0.18 * gross) - 35.0;
+
+    
+    cout << "Input hours: " << "hours=" << hours << " rate="  << rate << endl;
+    cout << fixed << setprecision(2);
+    cout << "Regular hours: " << regHours << endl;
+    cout << "Overtime hours: " << otHours << endl;
+    cout << "Gross pay: $ " << gross << endl;
+    cout << "Net pay: $" << net << endl;
+
+
+
+
+    return 0;
+}
+```
+# part D
