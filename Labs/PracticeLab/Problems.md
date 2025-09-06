@@ -116,4 +116,37 @@ int main() {
     return 0;
 }
 ```
-# part D
+# Part D
+``` c++
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+
+    int items = 5; 
+    double price = 25;
+    cout << "Enter items and price: " << items << " and " << price << endl;
+
+    // BUG 1: uninitialized total
+    double total = 0.0;  
+    total = items * price; 
+
+    // BUG 2: integer division
+    int discountPercent = 15;
+    double discount = total * static_cast<double>(discountPercent) / 100.0;
+
+    // BUG 3: precedence & shipping
+    double shipping = 5 + 2 * items;
+    double afterDiscount = total - discount;
+    if (afterDiscount >= 100.0) shipping = 0;
+
+    std::cout << std::fixed << std::setprecision(2);
+
+    cout << "Total: $" << total << endl;
+    cout << "Discount: $" << discount << endl;
+    cout << "Shipping: $" << shipping << endl;
+    cout << "Grand Total: $" << (afterDiscount + shipping) << endl;
+}
+``` 
