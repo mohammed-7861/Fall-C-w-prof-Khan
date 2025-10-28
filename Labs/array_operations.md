@@ -39,10 +39,8 @@ int main() {
             if (duplicateFound) break;
         }
 
-        if (!duplicateFound) break;  // valid input → exit loop
+        if (!duplicateFound) break;  // valid input than exit this loop and move on
 
-        // If duplicate found, clear cin manually (simple way without <limits>)
-        cin.ignore(10000, '\n');  // dump leftover input
     }
 
     // Menu (runs once)
