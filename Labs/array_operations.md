@@ -12,35 +12,32 @@
 using namespace std;
 
 int main() {
-    int numbers[5];
-    array<int, 5> arr;
+    array<int, 5> arr; // array to hold 5 numbers
+    bool validInput = false;
 
-    while (true) {  // repeat input until valid (no duplicates)
-        bool duplicateFound = false;
-
-        cout << "Enter 5 unique numbers (separated by commas): ";
-        char comma;
-
+    // Keep asking for input until we get 5 unique numbers
+    while (!validInput) {
+        cout << "Enter 5 numbers:\n";
         for (int i = 0; i < 5; ++i) {
-            cin >> numbers[i];
-            arr[i] = numbers[i];
-
-            if (i < 4) cin >> comma;  // read comma for first 4 numbers
-
-            // Check for duplicates among entered numbers
-            for (int j = 0; j < i; ++j) {
-                if (numbers[i] == numbers[j]) {
-                    cout << "Duplicate number found. Please re-enter all 5 numbers.\n\n";
-                    duplicateFound = true;
-                    break;
+            cout << "Number " << (i + 1) << ": "; 
+            cin >> arr[i];
+        }
+        
+        // Assume valid input initially
+        validInput = true;
+        
+        // Check for duplicates by using nested loops
+        for (int i = 0; i < 5; i++) {
+            for (int j = i + 1; j < 5; j++) {
+                if (arr[i] == arr[j]) {  // if a number is equal to another number than a duplicate is found
+                    cout << "Duplicate found: " << arr[i] << endl;
+                    cout << "Please enter 5 new numbers.\n\n";
+                    validInput = false;
+                    break;  // exit inner loop
                 }
             }
-
-            if (duplicateFound) break;
+            if (!validInput) break;  // exit outer loop
         }
-
-        if (!duplicateFound) break;  // valid input than exit this loop and move on
-
     }
 
     // Menu (runs once)
@@ -56,7 +53,7 @@ int main() {
 
     switch (choice) {
         case 1: {
-            // Sort ascending using bubble sort
+            // Sort Ascending using bubble sort
             for (int i = 0; i < 4; ++i) {  // 4 passes
                 for (int j = 0; j < 4 - i; ++j) {   // compare adjacent
                     if (arr[j] > arr[j + 1]) {   // swap if out of order
@@ -73,7 +70,7 @@ int main() {
         }
 
         case 2: {
-            // Sort descending using bubble sort
+            // Sort Descending using bubble sort
             for (int i = 0; i < 4; ++i) {  // 4 passes
                 for (int j = 0; j < 4 - i; ++j) { // compare adjacent
                     if (arr[j] < arr[j + 1]) { // swap if out of order
@@ -108,10 +105,7 @@ int main() {
             cout << "Invalid choice.\n";
             break;
     }
-
     cout << "Program finished.\n";
     return 0;
 }
 ```
-
-
