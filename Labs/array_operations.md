@@ -30,12 +30,13 @@ int main() {
         for (int i = 0; i < 5; i++) {
             for (int j = i + 1; j < 5; j++) {
                 if (arr[i] == arr[j]) {  // if a number is equal to another number than a duplicate is found
-                    cout << "Duplicate found: " << arr[i] << endl;
-                    cout << "Please enter 5 new numbers.\n\n";
+
+                    cout << "Please enter 5 new numbers.\n";
                     validInput = false;
                     break;  // exit inner loop
                 }
             }
+
             if (!validInput) break;  // exit outer loop
         }
     }
@@ -62,6 +63,7 @@ int main() {
                         arr[j + 1] = temp;   // swap
                     }
                 }
+
             }
             cout << "Sorted in Ascending order: ";
             for (int n : arr) cout << n << " ";
@@ -80,6 +82,7 @@ int main() {
                     }
                 }
             }
+
             cout << "Sorted in Descending order: "; // display sorted array
             for (int n : arr) cout << n << " ";  // display numbers
             cout << endl;
@@ -98,14 +101,14 @@ int main() {
         }
 
         case 5:
-            cout << "Exiting program.\n";
+            cout << "Exiting program.";
             return 0;
 
         default:
-            cout << "Invalid choice.\n";
+            cout << "Invalid choice.";
             break;
     }
-    cout << "Program finished.\n";
+    cout << "Program complete";
     return 0;
 }
 ```
