@@ -41,7 +41,7 @@ public:
                 if (col < 2) cout << " | ";
             }
             cout << "\n";
-            if (row < 2) cout << "  ---------\n";
+            if (row < 2) cout << "  -----------\n";
         }
     }
 
