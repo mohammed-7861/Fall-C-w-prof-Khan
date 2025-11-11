@@ -62,9 +62,9 @@ void sortAscending(array<int, 5>& numbers) {
         for (int current = 0; current < 4 - pass; current++) {
             if (numbers[current] > numbers[current + 1]) { // If current is greater than next
                 // Swap them
-                int temp = numbers[current]; // Temporary variable to hold the current number
+                int temp = numbers[current]; // temporary variable to hold the current number
                 numbers[current] = numbers[current + 1]; // Move the next number to current position
-                numbers[current + 1] = temp; // Place the current number in the next position
+                numbers[current + 1] = temp; // place the current number in the next position
             }
         }
     }
@@ -99,7 +99,7 @@ void sortDescending(array<int, 5>& numbers) {
 
 // Find and return the largest number in the array
 int findLargest(const array<int, 5>& numbers) {
-    int largest = numbers[0];  // Start by assuming the first number is largest
+    int largest = numbers[0];  // start by assuming the first number is largest
     
     // Check the rest of the numbers
     for (int i = 1; i < 5; i++) {
