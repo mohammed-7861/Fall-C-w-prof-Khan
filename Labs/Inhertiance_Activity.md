@@ -70,13 +70,13 @@ void savingsAccount::withdraw(double amount)
 {
     if (amount > getAccountBalance())
     {
-        // Insufficient funds - display error message
+        // Insufficient funds,  display error message
         std::cout << "Not enough balance to withdraw: " << amount << std::endl;
         std::cout << "Your current balance is: " << getAccountBalance() << std::endl;
     }
     else
     {
-        // Sufficient funds - process withdrawal
+        // Sufficient funds, process withdrawal
         bankAccount::withdraw(amount);
         std::cout << "Your new balance is " << getAccountBalance() << std::endl;
     }
