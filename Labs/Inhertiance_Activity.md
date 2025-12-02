@@ -16,13 +16,13 @@ private:
 
 public:
     // Setter for interest rate
-    void setInterestRate(double interestRate);
+    void setInterestRate(double interestRate);    // Setter for interest rate
 
     // Getter for interest rate
     double getInterestRate() const;
 
-    // Calculate and display monthly interest
-    void postInterest() const;
+
+    void postInterest() const;     // Calculate and display monthly interest
 
     // Override withdraw to prevent overdrafts
     void withdraw(double amount);
@@ -30,8 +30,8 @@ public:
     // Override print to include interest rate information
     void print() const;
 
-    // Default constructor
-    savingsAccount();
+ 
+    savingsAccount();    // Default constructor
 
     // Parameterized constructor
     savingsAccount(int accountNumber, double balance, double interestRate);
@@ -50,8 +50,7 @@ void savingsAccount::setInterestRate(double interestRate)
     this->interestRate = interestRate;
 }
 
-// Return the current interest rate
-double savingsAccount::getInterestRate() const
+double savingsAccount::getInterestRate() const  // Return the current interest rate
 {
     return interestRate;
 }
@@ -71,7 +70,7 @@ void savingsAccount::withdraw(double amount)
     if (amount > getAccountBalance())
     {
         // Insufficient funds,  display error message
-        std::cout << "Not enough balance to withdraw: " << amount << std::endl;
+        std::cout << "Not enough balance to withdraw: " << amount << std::endl; // Insufficient funds,  display error message
         std::cout << "Your current balance is: " << getAccountBalance() << std::endl;
     }
     else
@@ -82,8 +81,8 @@ void savingsAccount::withdraw(double amount)
     }
 }
 
-// Display account information including balance and interest rate
-void savingsAccount::print() const
+
+void savingsAccount::print() const      // Display account information including balance and interest rate
 {
     bankAccount::print(); // Call parent class print for account number and balance
     std::cout << "Interest Rate %: " << getInterestRate() << std::endl;
