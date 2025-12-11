@@ -40,7 +40,7 @@ std::string Task::getDescription() const // get task description
 {
     return description;
 }
-void TaskManager ::addTask(const std::string &desc) // add a new task using TaskManager
+void TaskManager ::addTask(const std::string &desc) // add a new task using TaskManager (dynamically allocates memory)
 {
     if (size >= capacity)
     {
@@ -52,7 +52,8 @@ void TaskManager ::addTask(const std::string &desc) // add a new task using Task
     cout << "Task added with ID " << size << "." << endl;
 }
 
-void TaskManager ::markCompleted(int id) // mark a task as completed by ID and dynamically allocates memory using TaskManager
+//Locates a Task by its unique ID and sets its completion status to true.
+void TaskManager ::markCompleted(int id) // mark a task as completed by ID. It is under TaskMananger which dynamially allocated memory
 {
     for (int i = 0; i < size; ++i)
     {
@@ -66,7 +67,9 @@ void TaskManager ::markCompleted(int id) // mark a task as completed by ID and d
     cout << "Task with ID " << id << " not found." << endl;
 }
 
-void TaskManager ::removeTask(int id) // removes a task by ID using TaskManager which dynamically allocates memory
+//Uses a linear search to find the ID, then shifts all subsequent elements 
+ //one position to the left to fill the resulting gap.
+void TaskManager ::removeTask(int id) // removes a task by ID using TaskManager 
 {
     for (int i = 0; i < size; ++i)
     {
@@ -83,8 +86,9 @@ void TaskManager ::removeTask(int id) // removes a task by ID using TaskManager 
     }
     cout << "Task with ID " << id << " not found." << endl;
 }
-void TaskManager ::listTasks() const // lists all tasks using TaskManager which dynamically allocates memory
-{
+void TaskManager ::listTasks() const // lists all tasks using TaskManager
+{                                    //Iterates through the stored array of Task objects and prints the ID, 
+                                    //description, and a visual marker
     if (size == 0)
     {
         cout << "No tasks available." << endl;
@@ -102,3 +106,4 @@ TaskManager::TaskManager(int initialCapacity) // constructor
 {
     tasks = std::make_unique<Task[]>(capacity); // allocate dynamic array of tasks
 }
+
