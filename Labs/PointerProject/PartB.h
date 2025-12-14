@@ -20,5 +20,6 @@ public: // public member functions
 void addTask(Task *tasks, int &size, int capacity, const std::string &desc);
 void removeTask(Task *tasks, int &size, int id);
 void listTasks(Task *tasks, int size);
+void showMenu();
 
 #endif // PARTB_H
