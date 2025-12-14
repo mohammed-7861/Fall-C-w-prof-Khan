@@ -35,4 +35,6 @@ public:
     void listTasks() const;                // list all tasks
     void markCompleted(int id);            // mark a task as completed by ID
 };
+void showMenu();
 #endif // PARTC_H
+
